@@ -66,15 +66,6 @@ namespace ClassMethodDemo
                         {
                             Console.Clear();
                             Customer customer = new Customer();
-                            Console.WriteLine("Customer Id: ");
-                            customer.CustomerId = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("\nCustomer TC Number: ");
-                            customer.CustomerTcNumber = Console.ReadLine();
-                            Console.WriteLine("\nCustomer Name: ");
-                            customer.CustomerName = Console.ReadLine();
-                            Console.WriteLine("\nCustomer Surname: ");
-                            customer.CustomerSurname = Console.ReadLine();
-
                             CustomerManager customerManager = new CustomerManager();
                             customerManager.Add(customer);
                             Console.WriteLine("");
@@ -86,6 +77,15 @@ namespace ClassMethodDemo
                         {
                             Console.Clear();
                             CustomerManager customerManager = new CustomerManager();
+                            List<Customer> customers = new List<Customer> { customer1, customer2, customer3, customer4 };
+                            foreach (var c in customers)
+                            {
+                                Console.WriteLine("Customer ID: " + c.CustomerId + " Customer Name Surname: " + c.CustomerName + " " + c.CustomerSurname);
+                            }
+
+                            Console.WriteLine("\nCustomer Id for delete customer: ");
+                            int ID = Convert.ToInt32(Console.ReadLine());
+                            customerManager.Delete(customers, ID);
                             Console.WriteLine("");
                             Selection();
                             break;
