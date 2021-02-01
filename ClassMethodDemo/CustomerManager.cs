@@ -20,17 +20,7 @@ namespace ClassMethodDemo
             Console.WriteLine("\nSuccessfully added to the customer list: "+ customer.CustomerName+" "+customer.CustomerSurname);
         }
 
-        public void Delete(List<Customer> customers, int ID)
         {
-
-            foreach (var c in customers)
-            {
-                if (c.CustomerId == ID)
-                {
-                    Console.WriteLine("\nSuccessfully deleted from the customer list: " + c.CustomerName + " " + c.CustomerSurname);
-                }
-            }
-           
         }
 
         public void Listing(List<Customer> customers)
